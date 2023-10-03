@@ -46,9 +46,6 @@ public class registrationController2 {
     @FXML
     void initialize() {
 
-
-
-
         switchLogin.setStyle("-fx-background-color: #0E0E10");
 
         switchRegister.setOnAction(actionEvent -> {
@@ -61,10 +58,7 @@ public class registrationController2 {
         switchLogin.setOnAction(actionEvent -> {
             if (switchLogin.isSelected()){
                 switchRegister.setStyle("-fx-background-color: #0E0E10");
-
                 switchLogin.getScene().getWindow().hide();
-
-
                 FXMLLoader loader = new FXMLLoader();
                 loader.setLocation(getClass().getResource("/vshp/group/app/hello-view.fxml"));
                 try {
