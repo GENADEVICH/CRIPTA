@@ -48,16 +48,16 @@
             </Text>
             <Pane layoutX="55.0" layoutY="33.0" prefHeight="60.0" prefWidth="390.0" style="-fx-background-radius: 19; -fx-background-color: #0E0E10;">
                <children>
-                  <Button fx:id="switchLogin" layoutX="14.0" layoutY="10.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="185.0" selected="true" style="-fx-background-radius: 14; -fx-background-color: #2E591B;" text="Авторизация" textFill="WHITE">
+                  <ToggleButton fx:id="switchLogin" layoutX="14.0" layoutY="10.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="185.0" selected="true" style="-fx-background-radius: 14; -fx-background-color: #2E591B;" text="Авторизация" textFill="WHITE">
                      <font>
                         <Font size="15.0" />
                      </font>
-                  </Button>
-                  <Button fx:id="switchRegister" layoutX="199.0" layoutY="10.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="185.0" selected="true" style="-fx-background-radius: 14; -fx-background-color: #2E591B;" text="Регистрация" textFill="WHITE">
+                  </ToggleButton>
+                  <ToggleButton fx:id="switchRegister" layoutX="199.0" layoutY="10.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="185.0" selected="true" style="-fx-background-radius: 14; -fx-background-color: #2E591B;" text="Регистрация" textFill="WHITE">
                      <font>
                         <Font size="15.0" />
                      </font>
-                  </Button>
+                  </ToggleButton>
                </children>
             </Pane>
             <PasswordField fx:id="fieldPassword" layoutX="61.0" layoutY="418.0" prefHeight="60.0" prefWidth="390.0" style="-fx-background-color: #2B2F2C; -fx-background-radius: 19;" />
