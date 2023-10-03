@@ -86,7 +86,7 @@ public class registrationController3 {
             if (login.isEmpty() || (!password.equals(confirmPass))) {
                 System.out.println("wrong");
 
-            } else System.out.println("Success");
+            } else System.out.println("Success"); // открытие основного
         });
 
     }
