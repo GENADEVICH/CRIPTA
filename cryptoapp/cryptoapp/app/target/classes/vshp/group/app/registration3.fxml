@@ -59,7 +59,7 @@
                   </ToggleButton>
                </children>
             </Pane>
-            <TextField fx:id="fieldLogin" layoutX="55.0" layoutY="202.0" prefHeight="60.0" prefWidth="390.0" style="-fx-background-color: #2B2F2C; -fx-background-radius: 19;" />
+            <TextField fx:id="fieldLogin" layoutX="55.0" layoutY="202.0" prefHeight="60.0" prefWidth="390.0" style="-fx-background-color: #2B2F2C; -fx-background-radius: 19;-fx-text-fill: white;" />
          </children>
       </Pane>
       <Pane layoutX="500.0" prefHeight="700.0" prefWidth="500.0" />

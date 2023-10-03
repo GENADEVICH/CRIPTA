@@ -84,7 +84,7 @@ public class registrationController2 {
             String email = fieldEmail.getText();
             String phone = fieldPhone.getText();
 
-            System.out.println("  "+age);
+            System.out.println(" "+age);
 
             if (email.isEmpty() || !phone.contains("+7") || !email.contains("@") || age==null){
                 System.out.println("321");
@@ -110,18 +110,3 @@ public class registrationController2 {
     }
 
 }
-
-
-//    FXMLLoader loader = new FXMLLoader();
-//                loader.setLocation(getClass().getResource("/vshp/group/app/registration3.fxml"));
-//                        try {
-//                        loader.load();
-//                        } catch (IOException e) {
-//                        throw new RuntimeException(e);
-//                        }
-//
-//                        Parent root = loader.getRoot();
-//                        Stage stage = new Stage();
-//                        stage.setScene(new Scene(root));
-//                        stage.setResizable(false);
-//                        stage.showAndWait();
