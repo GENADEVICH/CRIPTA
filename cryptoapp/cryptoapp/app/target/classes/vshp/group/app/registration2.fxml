@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vshp.group.app.registrationController2">
+   <children>
+      <Pane prefHeight="700.0" prefWidth="500.0" style="-fx-background-color: #1A1A1A;">
+         <children>
+            <Button fx:id="buttonContinue2" layoutX="55.0" layoutY="528.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="390.0" style="-fx-background-color: #6AB04C; -fx-background-radius: 19;" text="Продолжить" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Button>
+            <TextField fx:id="fieldPhone" layoutX="55.0" layoutY="302.0" prefHeight="60.0" prefWidth="390.0" style="-fx-background-color: #2B2F2C; -fx-background-radius: 19;" />
+            <TextField fx:id="fieldEmail" layoutX="55.0" layoutY="418.0" prefHeight="60.0" prefWidth="390.0" style="-fx-background-color: #2B2F2C; -fx-background-radius: 19;" />
+            <Text fill="#ffffff80" layoutX="68.0" layoutY="187.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Дата рождения">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Text>
+            <Text fill="#ffffff80" layoutX="68.0" layoutY="293.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Телефон">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Text>
+            <Text fill="#ffffff80" layoutX="68.0" layoutY="405.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Text>
+            <Text fill="#ffffff80" layoutX="166.0" layoutY="616.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Уже есть аккаунт?">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Text>
+            <Button fx:id="buttonBackLogin" layoutX="281.0" layoutY="599.0" mnemonicParsing="false" style="-fx-background-color: #1A1A1A;" text="Войти" textFill="#2e591b">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Button>
+            <Pane layoutX="55.0" layoutY="33.0" prefHeight="60.0" prefWidth="390.0" style="-fx-background-radius: 19; -fx-background-color: #0E0E10;">
+               <children>
+                  <ToggleButton fx:id="switchLogin" layoutX="14.0" layoutY="10.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="185.0" selected="true" style="-fx-background-radius: 14; -fx-background-color: #2E591B;" text="Авторизация" textFill="WHITE">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </ToggleButton>
+                  <ToggleButton fx:id="switchRegister" layoutX="199.0" layoutY="10.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="185.0" selected="true" style="-fx-background-radius: 14; -fx-background-color: #2E591B;" text="Регистрация" textFill="WHITE">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </ToggleButton>
+               </children>
+            </Pane>
+            <DatePicker fx:id="datePicker" layoutX="55.0" layoutY="198.0" prefHeight="60.0" prefWidth="390.0" style="-fx-background-radius: 19; -fx-background-color: #2B2F2C; -fx-border-color: #2B2F2C;" />
+         </children>
+      </Pane>
+      <Pane layoutX="500.0" prefHeight="700.0" prefWidth="500.0" />
+   </children>
+</AnchorPane>
