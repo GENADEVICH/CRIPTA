@@ -25,7 +25,7 @@ public class registrationController3 {
     private Button buttonBackLogin;
 
     @FXML
-    private Button buttonContinue3;
+    private Button buttonContinue;
 
     @FXML
     private TextField fieldLogin;
@@ -76,6 +76,17 @@ public class registrationController3 {
                 stage.show();
 
             } else switchLogin.setStyle("-fx-background-color: #2E591B");
+        });
+
+        buttonContinue.setOnAction(actionEvent -> {
+            String login = fieldLogin.getText();
+            String password = fieldPassword.getText();
+            String confirmPass = fieldSecondPass.getText();
+
+            if (login.isEmpty() || (!password.equals(confirmPass))) {
+                System.out.println("wrong");
+
+            } else System.out.println("Success");
         });
 
     }
