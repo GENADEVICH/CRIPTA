@@ -50,7 +50,6 @@ public class registrationController {
 
         switchLogin.setStyle("-fx-background-color: #0E0E10");
 
-
         switchRegister.setOnAction(actionEvent -> {
             if (switchRegister.isSelected()){
                 switchLogin.setStyle("-fx-background-color: #0E0E10");
