@@ -8,6 +8,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
+<?import javafx.scene.control.PasswordField?>
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vshp.group.app.registrationController3">
    <children>
       <Pane prefHeight="700.0" prefWidth="500.0" style="-fx-background-color: #1A1A1A;">
@@ -17,8 +18,8 @@
                   <Font name="System Bold" size="20.0" />
                </font>
             </Button>
-            <TextField fx:id="fieldPassword" layoutX="55.0" layoutY="302.0" prefHeight="60.0" prefWidth="390.0" style="-fx-background-color: #2B2F2C; -fx-background-radius: 19;" />
-            <TextField fx:id="fieldSecondPass" layoutX="55.0" layoutY="418.0" prefHeight="60.0" prefWidth="390.0" style="-fx-background-color: #2B2F2C; -fx-background-radius: 19;" />
+            <PasswordField fx:id="fieldPassword" layoutX="55.0" layoutY="302.0" prefHeight="60.0" prefWidth="390.0" style="-fx-background-color: #2B2F2C; -fx-background-radius: 19;" />
+            <PasswordField fx:id="fieldSecondPass" layoutX="55.0" layoutY="418.0" prefHeight="60.0" prefWidth="390.0" style="-fx-background-color: #2B2F2C; -fx-background-radius: 19;" />
             <Text fill="#ffffff80" layoutX="68.0" layoutY="187.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Login">
                <font>
                   <Font name="System Bold" size="15.0" />

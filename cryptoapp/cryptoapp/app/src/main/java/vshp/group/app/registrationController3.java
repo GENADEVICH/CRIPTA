@@ -8,6 +8,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleButton;
 import javafx.stage.Stage;
@@ -30,10 +31,10 @@ public class registrationController3 {
     private TextField fieldLogin;
 
     @FXML
-    private TextField fieldPassword;
+    private PasswordField fieldPassword;
 
     @FXML
-    private TextField fieldSecondPass;
+    private PasswordField fieldSecondPass;
 
     @FXML
     private ToggleButton switchLogin;
