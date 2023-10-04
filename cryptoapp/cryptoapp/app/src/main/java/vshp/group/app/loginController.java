@@ -2,6 +2,7 @@ package vshp.group.app;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.Properties;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -85,6 +86,15 @@ public class loginController {
                 System.out.println("Проверьте верность ввода");
             } else {
                 System.out.println(login + " " +password+" "+email);
+
+                String to = "kzuk887@gmail.com";
+                String from = "web@gmail.com";
+                String host = "localhost";
+
+                Properties properties = System.getProperties();
+                properties.setProperty("mail.smtp.host", host);
+
+
             }
         });
 
