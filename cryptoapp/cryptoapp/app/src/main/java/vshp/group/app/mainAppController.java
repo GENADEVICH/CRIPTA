@@ -38,13 +38,8 @@ public class mainAppController {
 
     @FXML
     void initialize() {
-        assert chartGraph != null : "fx:id=\"chartGraph\" was not injected: check your FXML file 'mainApp.fxml'.";
-        assert coinOne != null : "fx:id=\"coinOne\" was not injected: check your FXML file 'mainApp.fxml'.";
-        assert coinThree != null : "fx:id=\"coinThree\" was not injected: check your FXML file 'mainApp.fxml'.";
-        assert coinTwo != null : "fx:id=\"coinTwo\" was not injected: check your FXML file 'mainApp.fxml'.";
-        assert textBalance != null : "fx:id=\"textBalance\" was not injected: check your FXML file 'mainApp.fxml'.";
-        assert textName != null : "fx:id=\"textName\" was not injected: check your FXML file 'mainApp.fxml'.";
-        assert textSurname != null : "fx:id=\"textSurname\" was not injected: check your FXML file 'mainApp.fxml'.";
+
+
 
     }
 

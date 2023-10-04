@@ -1,5 +1,7 @@
 package vshp.group.app;
 
+import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -88,8 +90,18 @@ public class registrationController {
             if (name.isEmpty() || surname.isEmpty() || patronymic.isEmpty()){
                 System.out.println("Чего-то не хватает");
             } else {
-                buttonContinue321.getScene().getWindow().hide();
+                try(FileWriter writer = new FileWriter("temp.json", false)) {
 
+                    String text = name + " : " + surname + " : " + patronymic;
+                    writer.write(text);
+                    writer.flush();
+
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
+
+
+                buttonContinue321.getScene().getWindow().hide();
                 FXMLLoader loader = new FXMLLoader();
                             loader.setLocation(getClass().getResource("/vshp/group/app/registration2.fxml"));
                             try {

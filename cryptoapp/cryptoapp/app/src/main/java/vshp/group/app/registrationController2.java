@@ -1,5 +1,6 @@
 package vshp.group.app;
 
+import java.io.FileWriter;
 import java.io.IOException;
 import java.net.URL;
 import java.time.LocalDate;
@@ -88,6 +89,18 @@ public class registrationController2 {
             if (email.isEmpty() || !phone.contains("+7") || !email.contains("@") || age==null){
                 System.out.println("321");
             } else {
+
+                try(FileWriter writer = new FileWriter("temp.json", true)) {
+
+                    String text = " :" + age + " : " + email + " : " + phone;
+                    writer.write(text);
+                    writer.flush();
+
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
+
+
                 buttonContinue2.getScene().getWindow().hide();
                     FXMLLoader loader = new FXMLLoader();
                     loader.setLocation(getClass().getResource("/vshp/group/app/registration3.fxml"));

@@ -1,5 +1,6 @@
 package vshp.group.app;
 
+import java.io.FileWriter;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -86,7 +87,34 @@ public class registrationController3 {
             if (login.isEmpty() || (!password.equals(confirmPass))) {
                 System.out.println("wrong");
 
-            } else System.out.println("Success"); // открытие основного
+            } else {
+
+                try(FileWriter writer = new FileWriter("temp.json", false)) {
+
+                    String text = " :" + login + " : " + password;
+                    writer.write(text);
+                    writer.flush();
+
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
+
+
+                buttonContinue.getScene().getWindow().hide();
+                FXMLLoader loader = new FXMLLoader();
+                loader.setLocation(getClass().getResource("/vshp/group/app/hello-view.fxml"));
+                try {
+                    loader.load();
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
+
+                Parent root = loader.getRoot();
+                Stage stage = new Stage();
+                stage.setScene(new Scene(root));
+                stage.setResizable(false);
+                stage.show();
+            }
         });
 
         buttonBackLogin.setOnAction(actionEvent -> {

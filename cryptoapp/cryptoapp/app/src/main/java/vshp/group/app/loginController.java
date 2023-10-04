@@ -87,13 +87,21 @@ public class loginController {
             } else {
                 System.out.println(login + " " +password+" "+email);
 
-                String to = "kzuk887@gmail.com";
-                String from = "web@gmail.com";
-                String host = "localhost";
+                buttonLogin.getScene().getWindow().hide();
 
-                Properties properties = System.getProperties();
-                properties.setProperty("mail.smtp.host", host);
-
+                FXMLLoader loader = new FXMLLoader();
+                loader.setLocation(getClass().getResource("/vshp/group/app/mainApp.fxml"));
+                try {
+                    loader.load();
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
+                Parent root = loader.getRoot();
+                Stage stage = new Stage();
+                stage.setScene(new Scene(root));
+                stage.setResizable(false);
+                stage.setFullScreen(true);
+                stage.show();
 
             }
         });

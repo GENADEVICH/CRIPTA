@@ -13,8 +13,8 @@
       <Pane prefHeight="700.0" prefWidth="500.0" style="-fx-background-color: #1A1A1A;">
          <children>
 
-            <TextField fx:id="fieldLogin" layoutX="55.0" layoutY="195.0" prefHeight="60.0" prefWidth="390.0" style="-fx-background-color: #2B2F2C; -fx-background-radius: 19;" />
-            <TextField fx:id="fieldEmail" layoutX="55.0" layoutY="302.0" prefHeight="60.0" prefWidth="390.0" style="-fx-background-color: #2B2F2C; -fx-background-radius: 19;" />
+            <TextField fx:id="fieldLogin" layoutX="55.0" layoutY="195.0" prefHeight="60.0" prefWidth="390.0" style="-fx-background-color: #2B2F2C; -fx-background-radius: 19; -fx-text-fill: white;" />
+            <TextField fx:id="fieldEmail" layoutX="55.0" layoutY="302.0" prefHeight="60.0" prefWidth="390.0" style="-fx-background-color: #2B2F2C; -fx-background-radius: 19; -fx-text-fill: white;" />
             <Button fx:id="buttonLogin" layoutX="55.0" layoutY="528.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="390.0" style="-fx-background-color: #6AB04C; -fx-text-fill: white; -fx-background-radius: 19;" text="Войти">
                <font>
                   <Font name="Calibri Bold" size="25.0" />
@@ -64,9 +64,9 @@
                   </Button>
                </children>
             </Pane>
-            <PasswordField fx:id="fieldPassword" layoutX="61.0" layoutY="418.0" prefHeight="60.0" prefWidth="390.0" style="-fx-background-color: #2B2F2C; -fx-background-radius: 19;" />
+            <PasswordField fx:id="fieldPassword" layoutX="61.0" layoutY="418.0" prefHeight="60.0" prefWidth="390.0" style="-fx-background-color: #2B2F2C; -fx-background-radius: 19; -fx-text-fill: white;" />
          </children>
       </Pane>
-      <Pane layoutX="500.0" layoutY="-2.0" prefHeight="700.0" prefWidth="500.0" style="-fx-background-image: url(E:\CRIPTA\cryptoapp\cryptoapp\app\src\main\resources\vshp\group\app\Rectangle2.png)"/>
+      <Pane layoutX="500.0" layoutY="-2.0" prefHeight="700.0" prefWidth="500.0" />
    </children>
 </AnchorPane>
