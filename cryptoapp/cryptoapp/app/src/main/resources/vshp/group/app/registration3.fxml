@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.control.ToggleButton?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<?import javafx.scene.control.PasswordField?>
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vshp.group.app.registrationController3">
    <children>
       <Pane prefHeight="700.0" prefWidth="500.0" style="-fx-background-color: #1A1A1A;">
@@ -45,23 +44,23 @@
                   <Font size="13.0" />
                </font>
             </Button>
-            <Pane layoutX="55.0" layoutY="33.0" prefHeight="60.0" prefWidth="390.0" style="-fx-background-radius: 19; -fx-background-color: #0E0E10;">
-               <children>
-                  <ToggleButton fx:id="switchLogin" layoutX="14.0" layoutY="10.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="185.0" selected="true" style="-fx-background-radius: 14; -fx-background-color: #2E591B;" text="Авторизация" textFill="WHITE">
-                     <font>
-                        <Font size="15.0" />
-                     </font>
-                  </ToggleButton>
-                  <ToggleButton fx:id="switchRegister" layoutX="199.0" layoutY="10.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="185.0" selected="true" style="-fx-background-radius: 14; -fx-background-color: #2E591B;" text="Регистрация" textFill="WHITE">
-                     <font>
-                        <Font size="15.0" />
-                     </font>
-                  </ToggleButton>
-               </children>
-            </Pane>
             <TextField fx:id="fieldLogin" layoutX="55.0" layoutY="202.0" prefHeight="60.0" prefWidth="390.0" style="-fx-background-color: #2B2F2C; -fx-background-radius: 19;-fx-text-fill: white;" />
          </children>
       </Pane>
       <Pane layoutX="500.0" prefHeight="700.0" prefWidth="500.0" />
+      <Pane layoutX="55.0" layoutY="33.0" prefHeight="60.0" prefWidth="390.0" style="-fx-background-radius: 19; -fx-background-color: #0E0E10;">
+         <children>
+            <Button fx:id="buttonAuth" layoutX="8.0" layoutY="9.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="185.0" style="-fx-background-radius: 14; -fx-background-color: #2E591B;" text="Авторизация" textFill="WHITE">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Button>
+            <Button fx:id="buttonRegister" layoutX="199.0" layoutY="9.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="185.0" style="-fx-background-radius: 14; -fx-background-color: #2E591B;" text="Регистрация" textFill="WHITE">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Button>
+         </children>
+      </Pane>
    </children>
 </AnchorPane>

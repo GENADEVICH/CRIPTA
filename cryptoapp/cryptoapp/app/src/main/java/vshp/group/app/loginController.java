@@ -36,45 +36,44 @@ public class loginController {
 
 
     @FXML
-    private Text noAccText;
+    private Button buttonAuth;
 
     @FXML
-    private ToggleButton switchLogin;
+    private Button buttonRegister;
 
     @FXML
-    private ToggleButton switchRegister;
+    private Button createAcc;
+
 
     @FXML
     void initialize() {
-        switchRegister.setStyle("-fx-background-color: #0E0E10");
+        buttonRegister.setStyle("-fx-background-color: #0E0E10");
 
-        switchRegister.setOnAction(actionEvent -> {
-            if (switchRegister.isSelected()){
-                switchLogin.setStyle("-fx-background-color: #0E0E10");
+        buttonRegister.setOnAction(actionEvent -> {
+            buttonRegister.setStyle("-fx-background-radius: 14; -fx-background-color: #2E591B");
+            buttonAuth.setStyle("-fx-background-color: #0E0E10");
 
-                switchRegister.getScene().getWindow().hide();
+            buttonRegister.getScene().getWindow().hide();
 
-                FXMLLoader loader = new FXMLLoader();
-                loader.setLocation(getClass().getResource("/vshp/group/app/registration1.fxml"));
-                try {
-                    loader.load();
-                } catch (IOException e) {
-                    throw new RuntimeException(e);
-                }
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(getClass().getResource("/vshp/group/app/registration1.fxml"));
+            try {
+            loader.load();
+            } catch (IOException e) {
+            throw new RuntimeException(e);
+            }
 
-                Parent root = loader.getRoot();
-                Stage stage = new Stage();
-                stage.setScene(new Scene(root));
-                stage.setResizable(false);
-                stage.show();
-
-            } else switchRegister.setStyle("-fx-background-color: #2E591B");
+            Parent root = loader.getRoot();
+            Stage stage = new Stage();
+            stage.setScene(new Scene(root));
+            stage.setResizable(false);
+            stage.show();
         });
 
-        switchLogin.setOnAction(actionEvent -> {
-            if (switchLogin.isSelected()){
-                switchRegister.setStyle("-fx-background-color: #0E0E10");
-            } else switchLogin.setStyle("-fx-background-color: #2E591B");
+        buttonAuth.setOnAction(actionEvent -> {
+            buttonAuth.setStyle("-fx-background-radius: 14; -fx-background-color: #2E591B");
+
+            buttonRegister.setStyle("-fx-background-color: #0E0E10");
         });
 
         buttonLogin.setOnAction(actionEvent -> {
@@ -87,6 +86,23 @@ public class loginController {
             } else {
                 System.out.println(login + " " +password+" "+email);
             }
+        });
+
+        createAcc.setOnAction(actionEvent -> {
+            createAcc.getScene().getWindow().hide();
+
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(getClass().getResource("/vshp/group/app/registration1.fxml"));
+            try {
+                loader.load();
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+            Parent root = loader.getRoot();
+            Stage stage = new Stage();
+            stage.setScene(new Scene(root));
+            stage.setResizable(false);
+            stage.show();
         });
     }
 }
