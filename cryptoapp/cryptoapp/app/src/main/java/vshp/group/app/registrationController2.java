@@ -92,7 +92,7 @@ public class registrationController2 {
 
                 try(FileWriter writer = new FileWriter("temp.json", true)) {
 
-                    String text = " :" + age + " : " + email + " : " + phone;
+                    String text = " :" + age + " : " + phone + " : " + email;
                     writer.write(text);
                     writer.flush();
 

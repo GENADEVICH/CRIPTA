@@ -89,7 +89,7 @@ public class registrationController3 {
 
             } else {
 
-                try(FileWriter writer = new FileWriter("temp.json", false)) {
+                try(FileWriter writer = new FileWriter("temp.json", true)) {
 
                     String text = " :" + login + " : " + password;
                     writer.write(text);
