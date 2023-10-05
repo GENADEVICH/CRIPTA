@@ -1,8 +1,9 @@
 package vshp.group.app;
 
-import java.io.IOException;
+import java.io.*;
 import java.net.URL;
-import java.util.Properties;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -11,8 +12,6 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import javafx.scene.control.ToggleButton;
-import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 public class loginController {
@@ -87,21 +86,8 @@ public class loginController {
             } else {
                 System.out.println(login + " " +password+" "+email);
 
-                buttonLogin.getScene().getWindow().hide();
+                loginUser(login,password,email);
 
-                FXMLLoader loader = new FXMLLoader();
-                loader.setLocation(getClass().getResource("/vshp/group/app/mainApp.fxml"));
-                try {
-                    loader.load();
-                } catch (IOException e) {
-                    throw new RuntimeException(e);
-                }
-                Parent root = loader.getRoot();
-                Stage stage = new Stage();
-                stage.setScene(new Scene(root));
-                stage.setResizable(false);
-                stage.setFullScreen(true);
-                stage.show();
 
             }
         });
@@ -123,4 +109,47 @@ public class loginController {
             stage.show();
         });
     }
+
+    private void  loginUser(String login, String password, String email){
+
+        DataBaseHandler dataBaseHandler = new DataBaseHandler();
+        User user = new User();
+        user.setLoginUser(login);
+        user.setEmailUser(email);
+        user.setPasswordUser(password);
+        ResultSet result = dataBaseHandler.getUser(user);
+
+        int count = 0;
+
+        while (true){
+            try {
+                if (!result.next()) break;
+            } catch (SQLException e) {throw new RuntimeException(e);}
+            count++;
+        }
+        if (count >=1 ){
+
+            System.out.println("Найден!");
+
+            buttonLogin.getScene().getWindow().hide();
+
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(getClass().getResource("/vshp/group/app/mainApp.fxml"));
+            try {
+                loader.load();
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+            Parent root = loader.getRoot();
+            Stage stage = new Stage();
+            stage.setScene(new Scene(root));
+            stage.setResizable(false);
+            stage.setFullScreen(true);
+            stage.show();
+
+        } else {
+            System.out.println("Нету");
+        }
+    }
 }
+

@@ -23,15 +23,20 @@ public class DataBaseHandler extends Config {
                 + Const.USERS_PHONE + ","
                 + Const.USERS_EMAIL + ","
                 + Const.USERS_LOGIN + ","
-                + Const.USERS_PASSWORD + ","
-                + ")"
-                + "VALUES(?,?,?,?,?,?,?,?)";
+                + Const.USERS_PASSWORD
+                + ")" + "VALUES(?,?,?,?,?,?,?,?)";
 
         try {
             PreparedStatement peSt = getDbConnection().prepareStatement(insert);
-            peSt.setString(1, user.getLoginUser());
-            peSt.setString(2, user.getPasswordUser());
-            peSt.setString(3, user.getAgeUser());
+            peSt.setString(2, user.getSurName());
+            peSt.setString(1, user.getName());
+            peSt.setString(3, user.getPatronymicName());
+            peSt.setString(4, user.getAgeUser());
+            peSt.setString(5, user.getPhoneUser());
+            peSt.setString(6, user.getEmailUser());
+            peSt.setString(7, user.getLoginUser());
+            peSt.setString(8, user.getPasswordUser());
+
 
             peSt.executeUpdate();
         } catch (SQLException | ClassNotFoundException e) {
@@ -39,22 +44,23 @@ public class DataBaseHandler extends Config {
         }
     }
 
-//    public ResultSet getUser (User user){
-//        ResultSet rsSet = null;
-//
-//        String select = "SELECT * FROM " + Const.USER_TABLE + " WHERE "
-//                + Const.USERS_NICKNAME + "=? AND "+ Const.USERS_PASSWORD + "=?";
-//
-//        try {
-//            PreparedStatement peSt = getDbConnection().prepareStatement(select);
-//            peSt.setString(1, user.getLoginUser());
-//            peSt.setString(2, user.getPasswordUser());
-//
-//            rsSet = peSt.executeQuery();
-//        } catch (SQLException | ClassNotFoundException e) {
-//            e.printStackTrace();
-//        }
-//
-//        return rsSet;
-//    }
+    public ResultSet getUser(User user) {
+        ResultSet resSet = null;
+
+        String select = "SELECT * FROM " + Const.USER_TABLE + " WHERE " +
+                Const.USERS_LOGIN + "=? AND " + Const.USERS_EMAIL + "=? AND " + Const.USERS_PASSWORD +"=?";
+
+        try {
+            PreparedStatement peSt = getDbConnection().prepareStatement(select);
+            peSt.setString(1, user.getLoginUser());
+            peSt.setString(3, user.getPasswordUser());
+            peSt.setString(2, user.getEmailUser());
+
+            resSet = peSt.executeQuery();
+        } catch (SQLException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+
+        return resSet;
+    }
 }

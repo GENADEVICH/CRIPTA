@@ -8,7 +8,7 @@ public class Const {
     public static final String USERS_NAME = "name";
     public static final String USERS_PATRONYMIC = "patronymic";
     public static final String USERS_AGE = "age";
-    public static final String USERS_PHONE = "phone";
+    public static final String USERS_PHONE = "numberPhone";
     public static final String USERS_EMAIL = "email";
     public static final String USERS_LOGIN = "login";
     public static final String USERS_PASSWORD = "password";

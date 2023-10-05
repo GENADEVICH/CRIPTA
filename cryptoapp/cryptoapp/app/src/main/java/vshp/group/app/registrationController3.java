@@ -1,7 +1,6 @@
 package vshp.group.app;
 
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
@@ -94,10 +93,37 @@ public class registrationController3 {
                     String text = " :" + login + " : " + password;
                     writer.write(text);
                     writer.flush();
+                    System.out.println(text);
 
                 } catch (IOException e) {
                     throw new RuntimeException(e);
                 }
+
+
+//                try (BufferedReader br = new BufferedReader(new FileReader("temp.json")))
+//                {
+//                    String lines;
+//                    while ((lines = br.readLine()) != null) {
+//                        String l = lines;
+//                        String[] l1 = l.split(":");
+//                        String SurName = l1[0];
+//                        String Name = l1[1];
+//                        String patronymic = l1[2];
+//                        String age = l1[3];
+//                        String number = l1[4];
+//                        String email = l1[5];
+//                        String logins = l1[6];
+//                        String passwords = l1[7];
+//
+//                        System.out.println("Вставлено: " + SurName + Name + patronymic + age + number + email + logins + passwords);
+//                    }
+//                } catch (IOException e) {
+//                    e.printStackTrace();
+//                }
+
+                User user = new User();
+                user.setLoginUser(login);
+                user.setPasswordUser(password);
 
 
                 buttonContinue.getScene().getWindow().hide();
@@ -108,6 +134,8 @@ public class registrationController3 {
                 } catch (IOException e) {
                     throw new RuntimeException(e);
                 }
+
+                signUpNewUser();
 
                 Parent root = loader.getRoot();
                 Stage stage = new Stage();
@@ -134,6 +162,48 @@ public class registrationController3 {
             stage.show();
         });
 
+    }
+
+    protected void signUpNewUser(){
+        DataBaseHandler dbHandler = new DataBaseHandler();
+
+        try (BufferedReader br = new BufferedReader(new FileReader("temp.json")))
+        {
+            String lines;
+            while ((lines = br.readLine()) != null) {
+                String l = lines;
+                String[] l1 = l.split(":");
+                String SurName = l1[0];
+                String Name = l1[1];
+                String patronymic = l1[2];
+                String age = l1[3];
+                String number = l1[4];
+                String email = l1[5];
+                String login = l1[6];
+                String password = l1[7];
+
+            User user = new User(SurName, Name, patronymic, age, number, email, login, password);
+           dbHandler.signUpUser(user);
+
+                System.out.println("Вставлено: " + SurName + Name + patronymic + age + number + email + login + password);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+//
+//        User user = new User();
+//        String surname = user.getSurName();
+//        String Name = user.getName();
+//        String patronymic = user.getPatronymicName();
+//        String age = user.getAgeUser();
+//        String number = user.getPhoneUser();
+//        String email = user.getEmailUser();
+//        String login = user.getLoginUser();
+//        String password = user.getPasswordUser();
+//
+//        User user1 = new User(surname, Name, patronymic, age, number, email, login, password);
+//        dbHandler.signUpUser(user1);
     }
 
 }

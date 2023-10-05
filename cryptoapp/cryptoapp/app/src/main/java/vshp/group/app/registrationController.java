@@ -92,13 +92,20 @@ public class registrationController {
             } else {
                 try(FileWriter writer = new FileWriter("temp.json", false)) {
 
-                    String text = name + " : " + surname + " : " + patronymic;
+                    String text = surname + " : " + name + " : " + patronymic;
                     writer.write(text);
                     writer.flush();
+                    System.out.println(text);
 
                 } catch (IOException e) {
                     throw new RuntimeException(e);
                 }
+
+
+//                User user = new User();
+//                user.setName(name);
+//                user.setSurName(surname);
+//                user.setPatronymicName(patronymic);
 
 
                 buttonContinue321.getScene().getWindow().hide();

@@ -95,10 +95,16 @@ public class registrationController2 {
                     String text = " :" + age + " : " + phone + " : " + email;
                     writer.write(text);
                     writer.flush();
+                    System.out.println(text);
 
                 } catch (IOException e) {
                     throw new RuntimeException(e);
                 }
+
+//                User user = new User();
+//                user.setEmailUser(email);
+//                user.setPhoneUser(phone);
+//                user.setEmailUser(email);
 
 
                 buttonContinue2.getScene().getWindow().hide();
