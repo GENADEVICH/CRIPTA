@@ -1,6 +1,7 @@
 package vshp.group.app;
 
 import java.net.URL;
+import java.sql.ResultSet;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.scene.chart.LineChart;
@@ -40,6 +41,12 @@ public class mainAppController {
     void initialize() {
 
 
+        User user = new User();
+
+        DataBaseHandler dataBaseHandler = new DataBaseHandler();
+        ResultSet result = dataBaseHandler.getInfo(user);
+
+        System.out.println(user.getName());
 
     }
 

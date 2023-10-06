@@ -49,15 +49,38 @@ public class DataBaseHandler extends Config {
     public ResultSet getUser(User user) {
         ResultSet resSet = null;
 
-        String select = "SELECT * FROM users WHERE login= "+user.getLoginUser()+" AND password= "+user.getPasswordUser()+"AND email= "+user.getEmailUser();
+        String select = "SELECT * FROM users WHERE login= "+user.getLoginUser()+" AND password= "+user.getPasswordUser();
 
         try {
             PreparedStatement peSt = getDbConnection().prepareStatement(select);
+
+
             resSet = peSt.executeQuery();
         } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
         }
 
         return resSet;
+    }
+
+    public ResultSet getInfo(User user){
+        ResultSet resultSet = null;
+
+        String select = "SELECT * FROM users WHERE login= "+user.getLoginUser()+" AND password= "+user.getPasswordUser();
+
+        try {
+            PreparedStatement peSt = getDbConnection().prepareStatement(select);
+
+
+            resultSet = peSt.executeQuery();
+            if (resultSet.next()){
+                String name = resultSet.getString(3);
+                user.setName(name);
+            }
+        } catch (SQLException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+
+        return resultSet;
     }
 }
