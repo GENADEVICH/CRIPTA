@@ -112,6 +112,7 @@ public class loginController {
 
     private void  loginUser(String login, String password, String email){
 
+
         DataBaseHandler dataBaseHandler = new DataBaseHandler();
         User user = new User();
         user.setLoginUser(login);
@@ -119,15 +120,15 @@ public class loginController {
         user.setPasswordUser(password);
         ResultSet result = dataBaseHandler.getUser(user);
 
-        int count = 0;
+        int counter = 0;
 
         while (true){
             try {
                 if (!result.next()) break;
             } catch (SQLException e) {throw new RuntimeException(e);}
-            count++;
+            counter++;
         }
-        if (count >=1 ){
+        if (counter >=1 ){
 
             System.out.println("Найден!");
 
@@ -135,11 +136,10 @@ public class loginController {
 
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(getClass().getResource("/vshp/group/app/mainApp.fxml"));
+
             try {
                 loader.load();
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
+            } catch (IOException e) {throw new RuntimeException(e);}
             Parent root = loader.getRoot();
             Stage stage = new Stage();
             stage.setScene(new Scene(root));
