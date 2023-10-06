@@ -28,8 +28,8 @@ public class DataBaseHandler extends Config {
 
         try {
             PreparedStatement peSt = getDbConnection().prepareStatement(insert);
-            peSt.setString(2, user.getSurName());
             peSt.setString(1, user.getName());
+            peSt.setString(2, user.getSurName());
             peSt.setString(3, user.getPatronymicName());
             peSt.setString(4, user.getAgeUser());
             peSt.setString(5, user.getPhoneUser());
@@ -49,16 +49,10 @@ public class DataBaseHandler extends Config {
     public ResultSet getUser(User user) {
         ResultSet resSet = null;
 
-        String select = "SELECT * FROM " + Const.USER_TABLE + " WHERE " +
-                Const.USERS_LOGIN + "=? AND " + Const.USERS_PASSWORD + "=?";
+        String select = "SELECT * FROM users WHERE login= "+user.getLoginUser()+" AND password= "+user.getPasswordUser()+"AND email= "+user.getEmailUser();
 
         try {
             PreparedStatement peSt = getDbConnection().prepareStatement(select);
-            peSt.setString(1, user.getLoginUser());
-            peSt.setString(2, user.getPasswordUser());
-
-            System.out.println(peSt);
-
             resSet = peSt.executeQuery();
         } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
